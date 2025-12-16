@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chromium 143 PDF Safe</title>
+
+  <style>
+    /* ================= PAGE NORMALIZATION ================= */
+
+    @page {
+      size: A4;
+      margin-block-start: 20mm;
+      margin-block-end: 28mm;
+      margin-inline-start: 15mm;
+      margin-inline-end: 15mm;
+    }
+
+    body {
+      margin: 0;
+      font-size: 12pt;
+      line-height: 1.4;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ================= FONT LOCKING ================= */
+
+    .ltr {
+      font-family: "DejaVu Sans", Arial, sans-serif;
+      direction: ltr;
+      text-align: start;
+    }
+
+    .rtl {
+      font-family: "Noto Naskh Arabic", "Amiri", serif;
+      direction: rtl;
+      text-align: start;
+    }
+
+    /* ================= CONTENT ================= */
+
+    h1 {
+      font-size: 18pt;
+      margin-block: 0 8mm;
+    }
+
+    p {
+      margin-block: 0 5mm;
+    }
+
+    .page {
+      page-break-after: always;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      height: 20mm;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-inline: 15mm;
+      font-size: 9pt;
+      border-top: 0.2mm solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ENGLISH PAGE -->
+  <div class="page ltr">
+    <h1>English PDF – Chromium 143 Safe</h1>
+    <p>
+      This page demonstrates stable left-to-right rendering using
+      Chromium 143 on Alpine Linux 3.22.
+    </p>
+  </div>
+
+  <!-- ARABIC PAGE -->
+  <div class="page rtl" lang="ar">
+    <h1>مستند PDF باللغة العربية</h1>
+    <p>
+      هذا مثال على مستند PDF باللغة العربية مع دعم كامل للاتجاه من
+      اليمين إلى اليسار باستخدام Chromium 143.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>© 2025 Example Corp</span>
+    <span>Page <span class="pageNumber"></span></span>
+  </div>
+
+</body>
+</html>
